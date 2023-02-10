@@ -27,6 +27,7 @@ const PORT: Number = Number(process.env.PORT);
 
 // Initialize the express app!
 const app: express.Application = express();
+app.disable("x-powered-by");
 
 // Add some external middlewares. These middlewares will always function for every request our express app receives.
 app.use(cors()); // allows cross origin resource sharing
@@ -59,6 +60,6 @@ app.use("/", mainRouter);
 
 // Start the express server in the defined port, this too uses a callback function which we have written right inside.
 app.listen(Number(process.env.PORT), () => {
-    connect; // connect to the mongo instance
+    connect(); // connect to the mongo instance
     console.log(`Listening on ${BASE_URL}:${PORT}...`); // Log at server start up
 });

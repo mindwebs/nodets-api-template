@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const connect = mongoose.connect(
+const connect = () => mongoose.connect(
     String(process.env.CONNECTION_URI),
     {},
     (err: mongoose.CallbackError) => {
