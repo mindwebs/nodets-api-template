@@ -5,15 +5,6 @@
   <h3>One line description of ABC</a></h3>
 </div>
 
-<br>
-
-<p align="center">
-  <a href="https://sonar.mwv.one/dashboard?id=mindwebs_abc"><img src="https://sonar.mwv.one/api/project_badges/measure?project=mindwebs_abc&metric=alert_status"></a> 
-  <a href="https://sonar.mwv.one/dashboard?id=mindwebs_abc"><img src="https://sonar.mwv.one/api/project_badges/measure?project=mindwebs_abc&metric=coverage"></a> 
-  <a href="https://sonar.mwv.one/dashboard?id=mindwebs_abc"><img src="https://sonar.mwv.one/api/project_badges/measure?project=mindwebs_abc&metric=bugs"></a>
-  <a href="https://sonar.mwv.one/dashboard?id=mindwebs_abc"><img src="https://sonar.mwv.one/api/project_badges/measure?project=mindwebs_abc&metric=vulnerabilities"></a>
-</p> 
-
 ## Contents
 
   -   [Contents](#contents)
