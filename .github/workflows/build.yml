@@ -1,23 +1,28 @@
 name: Build
 on:
-  push:
-    branches:
-      - main # or the name of your main branch
+    push:
+        branches:
+            - main
 jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      # - uses: sonarsource/sonarqube-quality-gate-action@main
-      #   timeout-minutes: 5
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - name: Install dependencies
+              run: npm install
+            - name: Test and coverage
+              run: npm run cover
+              env:
+                  PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+                  PROJECT_DESC: ${{ secrets.PROJECT_DESC }}
+                  BASE_URL: ${{ secrets.BASE_URL }}
+                  PORT: ${{ secrets.PORT }}
+                  CONNECTION_URI: ${{ secrets.CONNECTION_URI }}
+            - name: SonarQube Scan
+              uses: sonarsource/sonarqube-scan-action@master
+              env:
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                  SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
