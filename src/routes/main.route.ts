@@ -8,4 +8,4 @@ mainRouter.use((req: Request, res: Response) => {
     res.render('404');
 });
 
-export default mainRouter;
+export { mainRouter };

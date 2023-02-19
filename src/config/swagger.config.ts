@@ -37,6 +37,6 @@ const options = {
     apis: ["./src/config/swagger.doc.yml"],
 };
 
-const swaggerSpec = swaggerJSDoc(options);
+const swaggerSpec: object = swaggerJSDoc(options);
 
-export default swaggerSpec;
+export { swaggerSpec };
