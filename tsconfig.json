@@ -9,9 +9,8 @@
     "skipLibCheck": true
   },
   "typedocOptions": {
-    "entryPoints": [
-      "src/aether-api.ts"
-    ],
+    "entryPoints": ["./src"],
+    "entryPointStrategy": "Expand",
     "out": "./docs"
-  }
+}
 }
