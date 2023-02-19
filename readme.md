@@ -46,6 +46,12 @@ The current project structure is as follows:
 
 ```
 /
+  ├── .github/                    scripts and configs for github templating and workflows
+  ├── .nyc_output/                istanbul coverage output (generated on running npm run cover:test)
+  ├── build/                      JS build of the project (generated on running npm run build)
+  ├── coverage/                   istanbul coverage report (generated on running npm run cover:report)
+  ├── docs/                       code documentation by typedoc (generated on running npm run docs)
+  ├── node_modules/               directory that stores generated code of every node module
   ├── scripts/                    deploy scripts
   ├── src/
       ├── config/                 configurations for modules like db, swagger doc, etc go here
@@ -61,7 +67,7 @@ The current project structure is as follows:
         ├── utils/                utility functions used for testing go here
       ├── views/                  the frontend of the project in EJS, CSS and js
       ├── utils/                  utility or helper functions go here
-      ├── app.ts              entry point to our express app
+      ├── aether-api.ts           entry point to our expres app
   ├── .env.production             environment variables used in the project for prod
   ├── .env.development            environment variables used in the project for dev
   ├── .gitignore                  stores files and directories to be ignored in commits
