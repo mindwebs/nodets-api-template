@@ -17,7 +17,11 @@ import express from "express"; // express is the framework for the backend
 import swaggerUi from "swagger-ui-express"; // swagger is the package we use for better documentation of the api
 
 // Import custom packages we'll be using
-import { connect, getConnectionState } from "./config/db.config"; // has code to establish connection the mongo db
+import {
+    connect,
+    getConnectionState,
+    isValidConnectionURI,
+} from "./config/db.config"; // has code to establish connection the mongo db
 import { swaggerSpec } from "./config/swagger.config"; // has configuration for swagger
 import { mainRouter } from "./routes/main.route";
 import { logger } from "./utils/logger.util";
@@ -27,6 +31,13 @@ const PROJECT_NAME: string = String(process.env.PROJECT_NAME);
 const MONGO_URI: string = String(process.env.CONNECTION_URI);
 const BASE_URL: string = String(process.env.BASE_URL) || "http://127.0.0.1";
 const PORT: number = Number(process.env.PORT);
+
+// Check MongoDB connection string format
+if (!isValidConnectionURI(MONGO_URI)) {
+    // tslint:disable-next-line:no-console
+    console.log("Error: Invalid MongoDB Connection URI");
+    process.exit(0);
+}
 
 // Initialize the express app!
 const app: express.Application = express();
@@ -66,18 +77,11 @@ app.listen(PORT, async () => {
 
     // Logging for dev and prod environments
     if (String(process.env.NODE_ENV) !== "test") {
-        if (!db) {
-            logger.error("Invalid MongoDB Connection URI");
-            // tslint:disable-next-line:no-console
-            console.log("Invalid MongoDB Connection URI");
-        } else {
-            // tslint:disable-next-line:no-console
-            console.log(
-                `${getConnectionState(
-                    db.connection.readyState
-                )} to the database`
-            );
-        }
+        // tslint:disable-next-line:no-console
+        console.log(
+            `${getConnectionState(db.connection.readyState)} to the database`
+        );
+
         // tslint:disable-next-line:no-console
         console.log(`Listening on ${BASE_URL}:${PORT}...`);
         logger.info(`Listening on ${BASE_URL}:${PORT}...`);
