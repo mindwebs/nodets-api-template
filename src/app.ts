@@ -27,10 +27,10 @@ import { mainRouter } from "./routes/main.route";
 import { logger } from "./utils/logger.util";
 
 // Import variables for the env file.
-const PROJECT_NAME: string = String(process.env.PROJECT_NAME);
-const MONGO_URI: string = String(process.env.CONNECTION_URI);
-const BASE_URL: string = String(process.env.BASE_URL) || "http://127.0.0.1";
-const PORT: number = Number(process.env.PORT);
+const PROJECT_NAME = String(process.env.PROJECT_NAME);
+const MONGO_URI = String(process.env.CONNECTION_URI);
+const BASE_URL = String(process.env.BASE_URL) || "http://127.0.0.1";
+const PORT = Number(process.env.PORT);
 
 // Check MongoDB connection string format
 if (!isValidConnectionURI(MONGO_URI)) {

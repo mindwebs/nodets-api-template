@@ -74,9 +74,9 @@ const responseType: any = {
  */
 const GenerateResponse = (
     res: Response,
-    code: number = 200,
+    code = 200,
     result: any = {},
-    message: string = ""
+    message = ""
 ): Response => {
     let newMessage = message;
     if (message === "") {
@@ -90,10 +90,4 @@ const GenerateResponse = (
     });
 };
 
-interface ResponseInterface<Type = any> {
-    code: number;
-    result: Type | null;
-    message: string;
-}
-
-export { GenerateResponse, ResponseInterface };
+export { GenerateResponse };
