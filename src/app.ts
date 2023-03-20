@@ -2,10 +2,11 @@
     Load env file based on run command.
     Look at the package.json file, the script to run the server passes a variable named NODE_ENV using the cross-env package. We use the variable to determine which env file to call -> either .env.production or .env.development
 */
+import * as dotenv from "dotenv";
 if (!process.env.NODE_ENV) {
-    require("dotenv").config({ path: `.env.production` });
+    dotenv.config({ path: `.env.production` });
 } else {
-    require("dotenv").config({ path: `.env.${process.env.NODE_ENV}` });
+    dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 }
 
 // Import npm packages we'll use*.todo.md
@@ -16,14 +17,16 @@ import express from "express"; // express is the framework for the backend
 import swaggerUi from "swagger-ui-express"; // swagger is the package we use for better documentation of the api
 
 // Import custom packages we'll be using
-import { connect } from "./config/db.config"; // has code to establish connection the mongo db
+import { connect, getConnectionState } from "./config/db.config"; // has code to establish connection the mongo db
 import { swaggerSpec } from "./config/swagger.config"; // has configuration for swagger
 import { mainRouter } from "./routes/main.route";
+import { logger } from "./utils/logger.util";
 
 // Import variables for the env file.
-const PROJECT_NAME: String = String(process.env.PROJECT_NAME);
-const BASE_URL: String = String(process.env.BASE_URL);
-const PORT: Number = Number(process.env.PORT);
+const PROJECT_NAME: string = String(process.env.PROJECT_NAME);
+const MONGO_URI: string = String(process.env.CONNECTION_URI);
+const BASE_URL: string = String(process.env.BASE_URL) || "http://127.0.0.1";
+const PORT: number = Number(process.env.PORT);
 
 // Initialize the express app!
 const app: express.Application = express();
@@ -32,7 +35,7 @@ app.disable("x-powered-by");
 // Add some external middlewares. These middlewares will always function for every request our express app receives.
 app.use(cors()); // allows cross origin resource sharing. Edit and add whitelisted servers only
 app.use(express.json()); // specifies that the type of json in request body and response body will be JSON
-app.use(morgan('combined')) // use morgan to log each request
+app.use(morgan("combined")); // use morgan to log each request
 app.use(express.urlencoded({ extended: true })); // this middleware parses the incoming request body else it wouldn't be identified as a paylod data.
 
 // Set up ejs for server side rendering.
@@ -54,20 +57,30 @@ app.get("/status", (_req: express.Request, res: express.Response) =>
 */
 app.get("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-
 // Add grouped routes to the express app from ./routes/main.route.ts
 app.use("/", mainRouter);
 
 // Start the express server in the defined port, this too uses a callback function which we have written right inside.
-app.listen(Number(process.env.PORT), async () => {
-    const db = await connect(); // connect to the mongo instance
+app.listen(PORT, async () => {
+    const db = await connect(MONGO_URI); // connect to the mongo instance
 
     // Logging for dev and prod environments
-    if (String(process.env.NODE_ENV) != "test") {
-        db.connection.once("open", () =>
-            console.log("DB connection established.")
-        );
+    if (String(process.env.NODE_ENV) !== "test") {
+        if (!db) {
+            logger.error("Invalid MongoDB Connection URI");
+            // tslint:disable-next-line:no-console
+            console.log("Invalid MongoDB Connection URI");
+        } else {
+            // tslint:disable-next-line:no-console
+            console.log(
+                `${getConnectionState(
+                    db.connection.readyState
+                )} to the database`
+            );
+        }
+        // tslint:disable-next-line:no-console
         console.log(`Listening on ${BASE_URL}:${PORT}...`);
+        logger.info(`Listening on ${BASE_URL}:${PORT}...`);
     }
 
     // Emit ready state

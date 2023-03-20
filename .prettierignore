@@ -105,4 +105,9 @@ dist
 # TernJS port file
 .tern-port
 
-/builds
+# tsc output
+/build
+/lib
+
+# typedoc output
+/docs

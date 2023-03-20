@@ -1,16 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "es2016",
-    "module": "commonjs",
-    "outDir": "./build",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
-  },
-  "typedocOptions": {
-    "entryPoints": ["./src"],
-    "entryPointStrategy": "Expand",
-    "out": "./docs"
-}
+    "compilerOptions": {
+        "target": "es2016",
+        "module": "commonjs",
+        "outDir": "./build",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "typedocOptions": {
+        "entryPoints": ["./src"],
+        "entryPointStrategy": "Expand",
+        "out": "./docs"
+    }
 }

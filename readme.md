@@ -7,38 +7,38 @@
 
 ## Contents
 
-  -   [Contents](#contents)
-  -   [Description](#description)
-      -   [What's the problem we are trying to solve?](#whats-the-problem-we-are-trying-to-solve)
-      -   [How can ABC help?](#how-can-abc-help)
-      -   [The idea](#the-idea)
-  -   [Project structure](#project-structure)
-  -   [Project roadmap](#project-roadmap)
-  -   [Getting started](#getting-started)
-      -   [Prerequisites](#prerequisites)
-          -   [Softwares needed](#softwares-needed)
-          -   [Knowledge needed](#knowledge-needed)
-      -   [Installing](#installing)
-  -   [Future Scope](#future-scope)
-  -   [Built with](#built-with)
-  -   [Contributing](#contributing)
-  -   [Authors](#authors)
+-   [Contents](#contents)
+-   [Description](#description)
+    -   [What's the problem we are trying to solve?](#whats-the-problem-we-are-trying-to-solve)
+    -   [How can ABC help?](#how-can-abc-help)
+    -   [The idea](#the-idea)
+-   [Project structure](#project-structure)
+-   [Project roadmap](#project-roadmap)
+-   [Getting started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+        -   [Softwares needed](#softwares-needed)
+        -   [Knowledge needed](#knowledge-needed)
+    -   [Installing](#installing)
+-   [Future Scope](#future-scope)
+-   [Built with](#built-with)
+-   [Contributing](#contributing)
+-   [Authors](#authors)
 
 ## Description
 
-_
+\_
 
 ### What's the problem we are trying to solve?
 
-_
+\_
 
 ### How can ABC help?
 
-_
+\_
 
 ### The idea
 
-_
+\_
 
 ## Project structure
 
@@ -85,29 +85,29 @@ The current project structure is as follows:
 
 ## Project roadmap
 
-_
+\_
 
 ## Getting started
 
-_
+\_
 
 ### Prerequisites
 
 #### Softwares needed
 
-_
+\_
 
 #### Knowledge needed
 
-_
+\_
 
 ### Installing
 
-_
+\_
 
 ## Future Scope
 
-_
+\_
 
 ## Built with
 
