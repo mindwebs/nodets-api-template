@@ -1,6 +1,16 @@
 import { Response } from "express";
 
-const responseType: any = {
+type ResponseFields = {
+    httpstatus: number;
+    message: string;
+    type: string;
+};
+
+type ResponseType = {
+    [key: number]: ResponseFields
+};
+
+const responseType: ResponseType = {
     200: {
         httpstatus: 200,
         message: "Successfully loaded data",
