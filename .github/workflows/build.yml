@@ -1,8 +1,14 @@
 name: Build
 on:
+<<<<<<< HEAD
     push:
         branches:
             - main
+=======
+  push:
+    branches:
+      - stable # or the name of your main branch
+>>>>>>> 9ab07d9 (sonar active on stable branch only.)
 jobs:
     build:
         name: Build
