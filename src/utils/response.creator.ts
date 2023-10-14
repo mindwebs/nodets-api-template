@@ -7,7 +7,7 @@ type ResponseFields = {
 };
 
 type ResponseType = {
-    [key: number]: ResponseFields
+    [key: number]: ResponseFields;
 };
 
 const responseType: ResponseType = {

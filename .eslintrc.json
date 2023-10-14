@@ -75,11 +75,7 @@
             "error",
             {
                 "selector": "variable",
-                "format": [
-                    "camelCase",
-                    "UPPER_CASE",
-                    "PascalCase"
-                ],
+                "format": ["camelCase", "UPPER_CASE", "PascalCase"],
                 "leadingUnderscore": "allow",
                 "trailingUnderscore": "forbid"
             }
@@ -128,23 +124,14 @@
         "@typescript-eslint/type-annotation-spacing": "off",
         "@typescript-eslint/typedef": "off",
         "@typescript-eslint/unified-signatures": "error",
-        "arrow-parens": [
-            "off",
-            "always"
-        ],
-        "brace-style": [
-            "off",
-            "off"
-        ],
+        "arrow-parens": ["off", "always"],
+        "brace-style": ["off", "off"],
         "comma-dangle": "off",
         "complexity": "off",
         "constructor-super": "error",
         "dot-notation": "off",
         "eol-last": "off",
-        "eqeqeq": [
-            "error",
-            "smart"
-        ],
+        "eqeqeq": ["error", "smart"],
         "guard-for-in": "error",
         "id-denylist": [
             "error",
@@ -164,10 +151,7 @@
         "jsdoc/check-indentation": "error",
         "jsdoc/newline-after-description": "error",
         "linebreak-style": "off",
-        "max-classes-per-file": [
-            "error",
-            1
-        ],
+        "max-classes-per-file": ["error", 1],
         "max-len": "off",
         "new-parens": "off",
         "newline-per-chained-call": "off",
@@ -197,10 +181,7 @@
         "no-use-before-define": "off",
         "no-var": "error",
         "object-shorthand": "error",
-        "one-var": [
-            "error",
-            "never"
-        ],
+        "one-var": ["error", "never"],
         "padded-blocks": [
             "off",
             {
@@ -217,17 +198,12 @@
         "radix": "error",
         "semi": "off",
         "space-before-function-paren": "off",
-        "space-in-parens": [
-            "off",
-            "never"
-        ],
+        "space-in-parens": ["off", "never"],
         "spaced-comment": [
             "error",
             "always",
             {
-                "markers": [
-                    "/"
-                ]
+                "markers": ["/"]
             }
         ],
         "use-isnan": "error",
