@@ -1,0 +1,16 @@
+{
+    "header": "Changelog: Version History",
+    "types": [
+        {"type": "feat", "section": "Features"},
+        {"type": "fix", "section": "Bug Fixes"},
+        {"type": "chore", "hidden": true},
+        {"type": "docs", "hidden": "Documentation Updates"},
+        {"type": "style", "hidden": true},
+        {"type": "refactor", "hidden": true},
+        {"type": "perf", "hidden": "Performance Improvements"},
+        {"type": "test", "hidden": "Unit Test Updates"}
+    ],
+    "writerOpts": {
+        "commitsSort": false
+    }
+}
