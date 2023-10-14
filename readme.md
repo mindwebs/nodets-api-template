@@ -1,6 +1,6 @@
 <!-- Before starting to use this template, find and replace occurences of ABC wit your repo name (case sensitive) -->
 
-<div align="center">
+<!-- <div align="center">
   <h1>Project ABC</h1>
   <h3>One line description of ABC</a></h3>
 </div>
@@ -38,7 +38,7 @@
 
 ### The idea
 
-\_
+\_ -->
 
 ## Project structure
 
@@ -55,19 +55,20 @@ The current project structure is as follows:
   ├── scripts/                    deploy scripts
   ├── src/
       ├── config/                 configurations for modules like db, swagger doc, etc go here
-      ├── controllers/            controller functions for every route. controllers make calls to services
+      ├── controllers/            controller functions for every route
       ├── dtos/                   data transfer object definitions for cross function object passing
       ├── middlewares/            middlewares for various routes go here
       ├── models/                 database schema / models go here
+      ├── repositories/           database calls go here
       ├── routes/                 routes or endpoint definitions go here, routes make calls to controllers
-      ├── services/               files that process and query the database go here
+      ├── services/               main business logic implementation
       ├── tests/                  directory for endpoint testing
         ├── fixtures/             for pre-defining data and environments for tests
         ├── integration/          for integration tests using BDD methodology
         ├── utils/                utility functions used for testing go here
       ├── views/                  the frontend of the project in EJS, CSS and js
       ├── utils/                  utility or helper functions go here
-      ├── aether-api.ts           entry point to our expres app
+      ├── app.ts                  entry point to our express app
   ├── .env.production             environment variables used in the project for prod
   ├── .env.development            environment variables used in the project for dev
   ├── .gitignore                  stores files and directories to be ignored in commits
@@ -83,7 +84,7 @@ The current project structure is as follows:
 
 ```
 
-## Project roadmap
+<!-- ## Project roadmap
 
 \_
 
@@ -121,8 +122,4 @@ The current project structure is as follows:
 
 Please read [contributing.md](https://github.com/mindwebs/.github/contributing.md) for details on our code committing guidelines.
 
-## Authors
-
-<a href="https://mwv.one">
-  <img src="https://avatars.githubusercontent.com/u/56452701?s=200&v=4" />
-</a>
+## Authors -->
