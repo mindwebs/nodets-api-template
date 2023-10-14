@@ -56,9 +56,12 @@ The current project structure is as follows:
       ├── routes/                 routes or endpoint definitions go here, routes make calls to controllers
       ├── services/               files that process and query the database go here
       ├── tests/                  directory for endpoint testing
+        ├── fixtures/             for pre-defining data and environments for tests
+        ├── integration/          for integration tests using BDD methodology
+        ├── utils/                utility functions used for testing go here
       ├── views/                  the frontend of the project in EJS, CSS and js
       ├── utils/                  utility or helper functions go here
-      ├── abc-api.ts              entry point to our express app
+      ├── app.ts              entry point to our express app
   ├── .env.production             environment variables used in the project for prod
   ├── .env.development            environment variables used in the project for dev
   ├── .gitignore                  stores files and directories to be ignored in commits
